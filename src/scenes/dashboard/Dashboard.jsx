@@ -37,7 +37,7 @@ const ResponsiveChartWrapper = ({ children }) => (
 );
 
 const Dashboard = () => {
-  
+   const isSmallScreen = useMediaQuery('(max-width:500px)');
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -100,13 +100,14 @@ const Dashboard = () => {
       >
         {/* STAT BOXES - Tall & Beautiful on Large Screens */}
         {statData.map((data, i) => (
-          <Box
+          <Box 
             key={i}
             gridColumn={{ xs: 'span 1', sm: 'span 2', lg: 'span 3' }}
             gridRow={{ lg: 'span 2' }}
             bgcolor={colors.primary[400]}
             borderRadius="12px"
-            p={4}
+            p={isSmallScreen?'0px':'10px'}
+            ml={isSmallScreen?'-12px':'0'}
             display="flex"
             alignItems="center"
             justifyContent="center"
