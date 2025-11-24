@@ -37,7 +37,7 @@ const ResponsiveChartWrapper = ({ children }) => (
 );
 
 const Dashboard = () => {
-   const isSmallScreen = useMediaQuery('(max-width:500px)');
+   const isSmallScreen = useMediaQuery('(max-width:400px)');
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -49,7 +49,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box m={{ xs: '10px', sm: '20px' }} sx={{backgroundColor:`${colors.gray[900]}`, padding:'25px'}}>
+    <Box m={isSmallScreen?'10px' :'10px'} padding={isSmallScreen?'2px':'20px'} sx={{backgroundColor:`${colors.gray[900]}`,}}>
       {/* HEADER */}
       <Box
         display="flex"
@@ -87,13 +87,16 @@ const Dashboard = () => {
         gridTemplateColumns="repeat(12, 1fr)"
         gap="20px"
         mt="30px"
+          p={isSmallScreen?'0px':'10px'}
+            ml={isSmallScreen?'-12px':'0'}
         sx={{
           gridTemplateColumns: {
             xs: '1fr',
-            sm: 'repeat(4, 1fr)',
+            sm: 'repeat(3, 1fr)',
             lg: 'repeat(12, 1fr)',
           },
           gap: { xs: '16px', sm: '20px' },
+         
           
         }}
        
@@ -106,8 +109,7 @@ const Dashboard = () => {
             gridRow={{ lg: 'span 2' }}
             bgcolor={colors.primary[400]}
             borderRadius="12px"
-            p={isSmallScreen?'0px':'10px'}
-            ml={isSmallScreen?'-12px':'0'}
+        
             display="flex"
             alignItems="center"
             justifyContent="center"
