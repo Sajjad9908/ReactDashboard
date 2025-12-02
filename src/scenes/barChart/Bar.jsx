@@ -9,7 +9,7 @@ const Bar = () => {
   const colors=tokens(theme.palette.mode)
   
   return (
-    <Box m='20px ' bgcolor={colors.primary[400]} >
+    <Box m='5px ' bgcolor={colors.primary[400]} >
 
    
         <Header title='BarChart' subtitle='Bar Chart with MockData'/>

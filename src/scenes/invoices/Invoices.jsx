@@ -9,6 +9,7 @@ import Header from '../../component/Header';
 const Invoices = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+   const SmallScreen=useMediaQuery('(max-width: 890px)');
 
     const columns = [
         {
@@ -54,12 +55,12 @@ const Invoices = () => {
    
     return (
         <>
-            <Box m='20px'>
+            <Box m='5px'>
                 <Header title='Invoices' subtitle="Managing The Invoices Members" />
                 <Box
                     m='40px 0 0 0'
                     height='75vh'
-                    width='70%'
+                    width={`${SmallScreen?'100%':'70%'}`}
                     sx={{
                         '& .MuiDataGrid-root': {
                             border: 'none !important',

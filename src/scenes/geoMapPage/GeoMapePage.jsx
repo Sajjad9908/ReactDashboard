@@ -12,7 +12,7 @@ const GeoMapePage = () => {
    
 
   return (
-    <Box m="20px" mt='20px'  width='95%' padding='40px' bgcolor={`${colors.primary[400]}`} >
+    <Box m="5px" mt='20px'  width='95%' padding='40px' bgcolor={`${colors.primary[400]}`} >
         <Header title="Geo Map" subtitle="Simple Geo Map"/>
         <Box height="70vh"  border={`8px solid ${colors.gray[300]}`}
         >

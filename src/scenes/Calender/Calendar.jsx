@@ -48,7 +48,7 @@ const Calendar2 = () => {
   };
 
   return (
-    <Box m="20px" transition="margin-left 0.3s ease">
+    <Box m="5px" transition="margin-left 0.3s ease">
       <Header title="CALENDAR" subtitle="Full Interactive Calendar" />
 
       <Box display="flex" flexDirection={{ xs: 'column', MediumScreen: 'column', lg: 'row' }} gap={3}>

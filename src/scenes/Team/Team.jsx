@@ -11,6 +11,9 @@ import Header from '../../component/Header';
 const Team = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    
+    // Media query to detect screen width
+    const isSmallScreen = useMediaQuery('(max-width: 890px)');
 
     const columns = [
         {
@@ -67,40 +70,38 @@ const Team = () => {
     ];
 
     return (
-        <>
-            <Box m='20px'>
-                <Header title='Team' subtitle="Managing The Team Members" />
-                <Box
-                    m='40px 0 0 0'
-                    height='75vh'
-                    width='70%'
-                    sx={{
-                        '& .MuiDataGrid-root': {
-                            border: 'none !important',
-                        },
-                        '& .MuiDataGrid-cell': {
-                            borderBottom: 'none !important',
-                        },
-                        '& .name-column--cell': {
-                            color: colors.greenAccent[300], // Corrected the typo here
-                        },
-                        '& .MuiDataGrid-columnHeader': {
-                            backgroundColor: `${colors.blueAccent[700]} !important`,
-                            borderBottom: 'none',
-                        },
-                        '& .MuiDataGrid-virtualScroller':{
-                            backgroundColor:`${colors.primary[400]}!important`
-                        },
-                        '& .MuiDataGrid-footerContainer':{
-                            borderTop:'none',
-                            backgroundColor:`${colors.blueAccent[600]}!important`
-                        }
-                    }}
-                >
-                    <DataGrid rows={mockDataTeam} columns={columns} />
-                </Box>
+        <Box m='10px'>
+            <Header title='Team' subtitle="Managing The Team Members" />
+            <Box
+                m='40px 0 0 0'
+                height='75vh'
+                width={isSmallScreen ? '100%' : '70%'} // Change width based on screen size
+                sx={{
+                    '& .MuiDataGrid-root': {
+                        border: 'none !important',
+                    },
+                    '& .MuiDataGrid-cell': {
+                        borderBottom: 'none !important',
+                    },
+                    '& .name-column--cell': {
+                        color: colors.greenAccent[300], // Corrected the typo here
+                    },
+                    '& .MuiDataGrid-columnHeader': {
+                        backgroundColor: `${colors.blueAccent[700]} !important`,
+                        borderBottom: 'none',
+                    },
+                    '& .MuiDataGrid-virtualScroller':{
+                        backgroundColor:`${colors.primary[400]}!important`
+                    },
+                    '& .MuiDataGrid-footerContainer':{
+                        borderTop:'none',
+                        backgroundColor:`${colors.blueAccent[600]}!important`
+                    }
+                }}
+            >
+                <DataGrid rows={mockDataTeam} columns={columns} />
             </Box>
-        </>
+        </Box>
     );
 };
 

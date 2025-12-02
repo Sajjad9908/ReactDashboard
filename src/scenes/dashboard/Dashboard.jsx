@@ -137,7 +137,7 @@ const Dashboard = () => {
           <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
             <Box>
               <Typography variant="h5" fontWeight="600" color={colors.gray[100]}>Revenue Generated</Typography>
-              <Typography variant="h3" fontWeight="bold" color={colors.greenAccent[500]}>$59,342.32</Typography>
+              <Typography variant={`${isSmallScreen? 'h4':'h3'}`} fontWeight="bold" color={colors.greenAccent[500]}>$59,342.32</Typography>
             </Box>
             <IconButton>
               <DownloadIcon sx={{ fontSize: '28px', color: colors.greenAccent[500] }} />
@@ -149,7 +149,7 @@ const Dashboard = () => {
         </Box>
 
         {/* RECENT TRANSACTIONS */}
-        <Box gridColumn={{ xs: 'span 1', sm: 'span 4', lg: 'span 4' }} gridRow={{ lg: 'span 2' }} bgcolor={colors.primary[400]} borderRadius="12px" overflow="auto" maxHeight="400px">
+        <Box gridColumn={{ xs: 'span 1', sm: 'span 4', lg: 'span 4' }} gridRow={{ lg: 'span 2' }} bgcolor={colors.primary[400]} borderRadius="2px" overflow="auto" maxHeight="400px" m={isSmallScreen?'5px':'0px'} >
           <Typography color={colors.gray[100]} variant="h5" fontWeight="600" p="15px" borderBottom={`4px solid ${colors.primary[500]}`}>
             Recent Transactions
           </Typography>
