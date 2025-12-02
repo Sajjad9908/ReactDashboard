@@ -15,7 +15,7 @@ import PieChartIcon from '@mui/icons-material/PieChart';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import MenuIcon from '@mui/icons-material/Menu';
 import MapIcon from '@mui/icons-material/Map';
-import image from '../../assets/Profile.png';
+import image from '../../assets/Project.png';
 
 const Item = ({ title, to, icon, selected, setSelected, onItemClick }) => {
   const theme = useTheme();
